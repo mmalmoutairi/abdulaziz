@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Student management</title>
+        <title>Update section</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #3 for statistics, charts, recent events and reports" name="description" />
@@ -115,7 +115,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </a>
                                           
                                         </li>
-                                          <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="section.html"> section
                                                 <span class="arrow"></span>
                                             </a>
@@ -144,7 +144,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="container">
                                     <!-- BEGIN PAGE TITLE -->
                                     <div class="page-title">
-                                        <h1>Admin User management 
+                                        <h1>Admin section management 
                                             
                                         </h1>
                                     </div>
@@ -161,7 +161,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <!-- BEGIN PAGE BREADCRUMBS -->
                                     <ul class="page-breadcrumb breadcrumb">
                                         <li>
-                                            <a href="table.html">Student management</a>
+                                            <a href="#">Update section </a>
                                             <i class="fa fa-circle"></i>
                                         </li>
                                         
@@ -173,62 +173,60 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <!-- BEGIN SAMPLE TABLE PORTLET-->
-                                                <div class="portlet box green">
-                                                    <div class="portlet-title">
-                                                        <div class="actions">
-                                                            <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                                                <label class="btn btn-transparent red btn-outline btn-circle btn-sm active">
-                                                                    <input type="radio" name="options" class="toggle" id="option1">Add Student</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="caption">
-                                                            <i class="fa fa-comments"></i>Student</div>
-                                                        <div class="tools">
-                                                            <a href="javascript:;" class="collapse"> </a>
-                                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
-                                                            <a href="javascript:;" class="reload"> </a>
-                                                            <a href="javascript:;" class="remove"> </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="portlet-body">
-                                                        <div class="table-scrollable">
-                                                            <table class="table table-striped table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th> # </th>
-                                                                        <th>  Name </th>
-                                                                        <th> Student ID </th>
-                                                                        <th> Status </th>
-                                                                        <th> delete </th>
-                                                                        <th> Update </th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td> 1 </td>
-                                                                        <td> Abdulrahman </td>
-                                                                        <td> 4330000001 </td>
-                                                                        <td>  <span class="label label-sm label-success"> Approved </span> </td>
-                                                                        <td> <a href="javascript:;" class="btn btn-outline btn-circle dark btn-sm black">
-                                                                                <i class="fa fa-trash-o"></i> Delete </a></td>
-                                                                        <td> <a href="Ub_Student.html" class="btn btn-outline btn-circle btn-sm purple">
-                                                                                <i class="fa fa-edit"></i> Update </a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> 2 </td>
-                                                                        <td> Musab </td>
-                                                                        <td> 4330000002 </td>
-                                                                        <td> <span class="label label-sm label-danger"> Blocked </span> </td>
-                                                                         <td> <a href="javascript:;" class="btn btn-outline btn-circle dark btn-sm black">
-                                                                                <i class="fa fa-trash-o"></i> Delete </a></td>
-                                                                        <td> <a href="Ub_Student.html" class="btn btn-outline btn-circle btn-sm purple">
-                                                                                <i class="fa fa-edit"></i> Update </a></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <form class="register-form" action="index.html" method="post">
+               
+                <div class="form-group">
+                   <label for="single" class="control-label">No. Division</label>
+                    <label class="control-label visible-ie8 visible-ie9"> No. Division </label>
+                    <input class="form-control placeholder-no-fix" type="text" placeholder=" Division" name="fullname" /> </div>
+                    
+                     <div class="form-group">
+                           <label for="single" class="control-label">Cours</label>
+                            <select id="single" class="form-control select2">
+                             <option></option>
+                                  </div>                                    
+                                 <option value="AK">NAL101</option>
+                              <option value="HI">NAL201</option>
+                                                                
+                               </select>
+                                </div> 
+                                
+                                            
+                              <div class="col-sm-offset-1">
+                               <label class="mt-checkbox mt-checkbox-outline">
+                                <input type="checkbox"> Sunday      
+                                  <span></span>
+                                   </label>
+                                   <label class="mt-checkbox mt-checkbox-outline">
+                                <input type="checkbox"> Monday
+                                  <span></span>
+                                   </label>
+                                  <label class="mt-checkbox mt-checkbox-outline">
+                                <input type="checkbox"> Tuesday
+                                  <span></span>
+                                   </label>
+                                  <label class="mt-checkbox mt-checkbox-outline">
+                                <input type="checkbox"> Wednesday
+                                  <span></span>
+                                   </label>
+                                  <label class="mt-checkbox mt-checkbox-outline">
+                                <input type="checkbox"> Thursday
+                                  <span></span>
+                                   </label>
+                                   </div>
+                          
+                   <div class="form-group">
+                   <label for="single" class="control-label">Taime</label>
+                    <label class="control-label visible-ie8 visible-ie9"> Taime</label>
+                    <input class="form-control placeholder-no-fix" type="text" placeholder=" Taime" name="fullname" /> </div><div class="form-group">
+                   <label for="single" class="control-label">maximum</label>
+                    <label class="control-label visible-ie8 visible-ie9"> maximum </label>
+                    <input class="form-control placeholder-no-fix" type="text" placeholder=" maximum" name="fullname" /> </div>
+                    
+                <div class="form-actions">
+                    <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-left">Update</button>
+                </div>
+            </form>
                                                 <!-- END SAMPLE TABLE PORTLET-->
                                             </div>
                                             
