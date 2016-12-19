@@ -52,7 +52,7 @@ if ($id != 0) {
         $count = mysqli_num_rows($result);
         if($count > 0){
           for ($i = 0; $i < $count; $i++) {
-              $course[@count($course)] = mysqli_fetch_object($result);
+              $semester[@count($semester)] = mysqli_fetch_object($result);
           }
         } else {
             ?>
@@ -160,19 +160,15 @@ if ($id != 0) {
                                                                     <div class="portlet-body">
                                                                         <div class="row static-info">
                                                                             <div class="col-md-5 name"> Course Name: </div>
-                                                                            <div class="col-md-7 value"> Jhon Doe </div>
+                                                                            <div class="col-md-7 value"> <?php echo $course[0]->name_course; ?> </div>
                                                                         </div>
                                                                         <div class="row static-info">
                                                                             <div class="col-md-5 name"> Section No : </div>
-                                                                            <div class="col-md-7 value"> jhon@doe.com </div>
+                                                                            <div class="col-md-7 value"> <?php echo $course[0]->section_number; ?> </div>
                                                                         </div>
                                                                         <div class="row static-info">
                                                                             <div class="col-md-5 name"> Maximum Student: </div>
-                                                                            <div class="col-md-7 value"> New York </div>
-                                                                        </div>
-                                                                        <div class="row static-info">
-                                                                            <div class="col-md-5 name"> Number Avilable seat: </div>
-                                                                            <div class="col-md-7 value"> 12234389 </div>
+                                                                            <div class="col-md-7 value"> <?php echo $course[0]->max_studemt; ?> </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -188,8 +184,15 @@ if ($id != 0) {
                                                                     </div>
                                                                     <div class="portlet-body">
                                                                         <div class="row static-info">
-                                                                            <div class="col-md-12 value"> Jhon Done
-                                                                                <br> #24 Park Avenue Str
+                                                                            <div class="col-md-12 value">Semester Name :  <?php echo $semester[0]->name; ?>
+                                                                                <br>Semester Status : <?php
+                                                                                  if($semester[0]->isActive == 1){
+                                                                                    echo "Open";
+                                                                                  }else{
+                                                                                    echo "Close";
+                                                                                  }
+
+                                                                                 ?>
                                                                                 </div>
                                                                         </div>
                                                                     </div>

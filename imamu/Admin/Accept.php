@@ -2,7 +2,7 @@
 session_start();
 include 'header.php';
 include '../db/db.php';
-$query = "select r.id ,  u.first_name , u.middle_name , u.third_name , u.last_name , s.name as semester_name , c.name as course_name from request r , user u , semester s , course c where r.student_id = u.id AND r.semester_id = s.id AND r.course_id = c.id and r.status = 1 order by `id` desc";
+$query = " SELECT r.id, u.first_name, u.middle_name, u.third_name, u.last_name, s.name AS semester_name, se.section_number AS secion_name, se.course_id AS course_id, c.name as course_name FROM request r, USER u, semester s, section se, course c WHERE r.student_id = u.id AND r.semester_id = s.id AND r.section_id = se.id AND r.status = 1 AND se.course_id = c.id ORDER BY `id` DESC";
 $result = @mysqli_query($connection, $query);
 $count = mysqli_num_rows($result);
 $array = array();

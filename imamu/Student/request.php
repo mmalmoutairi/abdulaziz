@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+  if($_SESSION['role'] != 2){
+    header("Location: ../login.php" , false);
+  }
+}else{
+  header("Location: ../login.php" , false);
+}
+
+ ?>
 <!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
@@ -21,7 +32,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Student Grude</title>
+        <title>Requset managment</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #3 for statistics, charts, recent events and reports" name="description" />
@@ -79,7 +90,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="page-header-menu">
                             <div class="container">
                                 <!-- الهيدر -->
-                                   <div class="hor-menu  ">
+
+                                <div class="hor-menu  ">
                                     <ul class="nav navbar-nav">
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
                                             <a href="Index.html"> Dashboard
@@ -87,7 +99,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </a>
 
                                         </li>
-                                        
+
 
                                       <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="javascript:;"> Requset
@@ -100,7 +112,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <li aria-haspopup="true" class=" ">
                                                     <a href="request.html" class="nav-link  ">  Requset </a>
                                                 </li>
-                                             
+
 
                                             </ul>
                                         </li>
@@ -110,11 +122,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </a>
 
                                         </li>
-                                        
+
 
                                     </ul>
                                 </div>
-                                
                                 <!-- END MEGA MENU -->
                             </div>
                         </div>
@@ -128,14 +139,14 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- BEGIN CONTAINER -->
                     <div class="page-container">
                         <!-- BEGIN CONTENT -->
-                        <div class="page-content-wrapper">
+
                             <!-- BEGIN CONTENT BODY -->
                             <!-- BEGIN PAGE HEAD-->
                             <div class="page-head">
                                 <div class="container">
                                     <!-- BEGIN PAGE TITLE -->
                                     <div class="page-title">
-                                        <h1>Student Grude
+                                        <h1>Admin Requset management
 
                                         </h1>
                                     </div>
@@ -147,117 +158,86 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <!-- END PAGE HEAD-->
                             <!-- BEGIN PAGE CONTENT BODY -->
-                     <div class="page-container">
-                        <!-- BEGIN CONTENT -->
-                        
-                            <!-- BEGIN CONTENT BODY -->
-                            <!-- BEGIN PAGE HEAD-->
-                            <div class="page-head">
-                                <div class="container">
-                                    <!-- BEGIN PAGE TITLE -->
-                                   
-                                    <!-- END PAGE TITLE -->
-                                    <!-- BEGIN PAGE TOOLBAR -->
-                                    
-                                    <!-- END PAGE TOOLBAR -->
-                                </div>
-                            </div>
-                            <!-- END PAGE HEAD-->
-                            <!-- BEGIN PAGE CONTENT BODY -->
                             <div class="page-content">
                                 <div class="container">
                                     <!-- BEGIN PAGE BREADCRUMBS -->
-                                  
+                                    <ul class="page-breadcrumb breadcrumb">
+                                        <li>
+                                            <a href="table.html">Requset management</a>
+                                            <i class="fa fa-circle"></i>
+                                        </li>
+
+                                    </ul>
                                     <!-- END PAGE BREADCRUMBS -->
                                     <!-- BEGIN PAGE CONTENT INNER -->
                                     <div class="page-content-inner">
-                                        
+
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <!-- BEGIN SAMPLE TABLE PORTLET-->
-                                                
-                                                
-                                               <div class="col-md-12">
-                                                <!-- BEGIN CONDENSED TABLE PORTLET-->
-                                                
-                                                <div class="portlet box red">
+                                                <div class="portlet box green">
                                                     <div class="portlet-title">
+
                                                         <div class="caption">
-                                                            <i class="fa fa-picture"></i>Grude </div>
-                                                        
+                                                            <i class="fa fa-comments"></i>Requset </div>
+                                                        <div class="tools">
+                                                            <a href="javascript:;" class="collapse"> </a>
+                                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                                            <a href="javascript:;" class="reload"> </a>
+                                                            <a href="javascript:;" class="remove"> </a>
+                                                        </div>
                                                     </div>
                                                     <div class="portlet-body">
                                                         <div class="table-scrollable">
-                                                            <table class="table table-condensed table-hover">
+                                                            <table class="table table-striped table-hover">
                                                                 <thead>
                                                                     <tr>
                                                                         <th> # </th>
-                                                                        <th>  Name Cours </th>
-                                                                        <th> Hours </th>
-                                                                        <th> Grade  </th>
-                                                                        
+                                                                        <th>  nomber request   </th>
+
+                                                                        <th>  Status   </th>
+
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td> 1 </td>
-                                                                        <td> ahmad </td>
-                                                                        <td> 4 </td>
-                                                                        <td> A</td>
-                                                                      
+                                                                         <td> 1 </td>
+                                                                         <td>43251</td>
+
+                                                                          <td>  <span class="label label-sm label-success"> acceptable </span> </td>
+
                                                                     </tr>
                                                                     <tr>
-                                                                        <tr class="danger">
-                                                                        <td> 2 </td>
-                                                                        <td> ali   </td>
-                                                                        <td> 3 </td>
-                                                                        <td>H </td>
-                                                                        </tr>
+                                                                        <td> 2</td>
+                                                                        <td>4653</td>
+
+                                                                        <td> <span class="label label-sm label-danger"> unacceptable </span> </td>
+
+
                                                                     </tr>
                                                                     <tr>
-                                                                        <td> 3 </td>
-                                                                        <td> musob </td>
-                                                                        <td> 4 </td>
-                                                                        <td> A+</td>
-                                                                        
+                                                                        <td> 3</td>
+                                                                        <td>4653</td>
+
+                                                                        <td> <span class="label label-sm label-warning"> Has a problem </span> </td>
+
+
                                                                     </tr>
-                                                                    <tr>
-                                                                        <td> 4 </td>
-                                                                        <td> Sandy </td>
-                                                                        <td> 24 </td>
-                                                                        <td> B</td>
-                                                                        
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td> 5 </td>
-                                                                        <td> Sandy </td>
-                                                                        <td> 2 </td>
-                                                                        <td> C</td>
-                                                                       
-                                                                    </tr>
+
                                                                 </tbody>
                                                             </table>
-                                                            
                                                         </div>
-                                                        
                                                     </div>
-                                                    
                                                 </div>
-                                                
-                                                <!-- END CONDENSED TABLE PORTLET-->
-                                            </div>
                                                 <!-- END SAMPLE TABLE PORTLET-->
                                             </div>
-                                            
+
                                         </div>
-                                   
+
                                     </div>
                                     <!-- END PAGE CONTENT INNER -->
                                 </div>
                             </div>
-                            <!-- END PAGE CONTENT BODY -->
-                            <!-- END CONTENT BODY -->
-                        </div>
                             <!-- END PAGE CONTENT BODY -->
                             <!-- END CONTENT BODY -->
                         </div>

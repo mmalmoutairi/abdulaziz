@@ -87,60 +87,58 @@ if ($count > 0) {
                                         </div>
                                         <div class="caption">
                                             <i class="fa fa-comments"></i>DR</div>
-                                        <div class="tools">
-                                            <a href="javascript:;" class="collapse"> </a>
-                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
-                                            <a href="javascript:;" class="reload"> </a>
-                                            <a href="javascript:;" class="remove"> </a>
-                                        </div>
                                     </div>
                                     <div class="portlet-body">
                                         <div class="table-scrollable">
-                                            <table class="table table-striped table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th> # </th>
-                                                        <th>  Name </th>
-                                                        <th> Email</th>
-                                                        <th> Status </th>
-                                                        <th> Update </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
                                                     <?php
                                                     if (@count($array) > 0) {
-
+                                                      ?>
+                                                      <table class="table table-striped table-hover">
+                                                          <thead>
+                                                              <tr>
+                                                                  <th> # </th>
+                                                                  <th>  Name </th>
+                                                                  <th> Email</th>
+                                                                  <th> Status </th>
+                                                                  <th> Update </th>
+                                                              </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                      <?php
                                                         foreach ($array as $key => $value) {
-                                                            if ($value->status == 1) {
                                                                 ?>
                                                                 <tr>
                                                                     <td> <?php echo $key + 1; ?></td>
                                                                     <td><?php echo $value->first_name . " " . $value->middle_name . " " . $value->third_name . " " . $value->last_name ?></td>
                                                                     <td><?php echo $value->email; ?></td>
+                                                                    <?php
+                                                                    if ($value->status == 1) {
+                                                                    ?>
                                                                     <td>  <span class="label label-sm label-success"> Approved </span> </td>
+                                                                    <?php
+                                                                    }else{
+                                                                      ?>
+                                                                      <td> <span class="label label-sm label-danger"> Blocked </span> </td>
+                                                                      <?php
+                                                                    }
+                                                                     ?>
                                                                     <td> <a href="UB_DR.php?id=<?php echo $value->id; ?>" class="btn btn-outline btn-circle btn-sm purple">
                                                                             <i class="fa fa-edit"></i> Update </a></td>
                                                                 </tr>
                                                                 <?php
-                                                            } else {
-                                                                ?>
-                                                                <tr>
-                                                                    <td><?php echo $key + 1; ?></td>
-                                                                    <td><?php echo $value->first_name . " " . $value->middle_name . " " . $value->third_name . " " . $value->last_name ?></td>
-                                                                    <td><?php echo $value->email; ?></td>
-                                                                    <td> <span class="label label-sm label-danger"> Blocked </span> </td>
-                                                                    <td> <a href="UB_DR.php?id=<?php echo $value->id; ?>" class="btn btn-outline btn-circle btn-sm purple">
-                                                                            <i class="fa fa-edit"></i> Update </a></td>
-                                                                </tr>
-                                                                <?php
-                                                            }
                                                         }
-                                                    } else {
-
+                                                        ?>
+                                                      </tbody>
+                                                  </table>
+                                                        <?php
+                                                    } else{
+                                                        ?>
+                                                        <div class="alert alert-danger">
+                                                            <strong>Alert !</strong> No Doctor in database
+                                                        </div>
+                                                        <?php
                                                     }
                                                     ?>
-                                                </tbody>
-                                            </table>
                                         </div>
                                     </div>
                                 </div>

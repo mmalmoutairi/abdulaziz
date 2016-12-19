@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+  if($_SESSION['role'] != 2){
+    header("Location: ../login.php" , false);
+  }
+}else{
+  header("Location: ../login.php" , false);
+}
+
+ ?>
 <!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
@@ -87,7 +98,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </a>
 
                                         </li>
-                                        
+
 
                                       <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="javascript:;"> Requset
@@ -100,7 +111,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <li aria-haspopup="true" class=" ">
                                                     <a href="request.html" class="nav-link  ">  Requset </a>
                                                 </li>
-                                             
+
 
                                             </ul>
                                         </li>
@@ -110,12 +121,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </a>
 
                                         </li>
-                                        
+
 
                                     </ul>
                                 </div>
 
-                                
+
                                 <!-- END MEGA MENU -->
                             </div>
                         </div>
@@ -149,18 +160,18 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- END PAGE HEAD-->
                             <!-- BEGIN PAGE CONTENT BODY -->
                      <div class="page-container">
-                         
+
                         <!-- BEGIN CONTENT -->
-                        
+
                             <!-- BEGIN CONTENT BODY -->
                             <!-- BEGIN PAGE HEAD-->
                             <div class="page-head">
                                 <div class="container">
                                     <!-- BEGIN PAGE TITLE -->
-                                   
+
                                     <!-- END PAGE TITLE -->
                                     <!-- BEGIN PAGE TOOLBAR -->
-                                    
+
                                     <!-- END PAGE TOOLBAR -->
                                 </div>
                             </div>
@@ -168,13 +179,13 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- BEGIN PAGE CONTENT BODY -->
                             <div class="page-content">
                                 <div class="container">
-                                  
+
                                     <!-- BEGIN PAGE BREADCRUMBS -->
-                                  
+
                                     <!-- END PAGE BREADCRUMBS -->
                                     <!-- BEGIN PAGE CONTENT INNER -->
                                     <div class="page-content-inner">
-                                        
+
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <!-- BEGIN SAMPLE TABLE PORTLET-->
@@ -185,17 +196,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <h4 class="widget-thumb-heading">Request</h4>
                                                     <div class="widget-thumb-wrap">
                                                         <i class="widget-thumb-icon bg-green icon-eye"></i>
-                                                        
+
                                                         <div class="widget-thumb-body">
-                                                           
+
                                                             <span class="widget-thumb-body-stat" data-counter="counterup" data-value="4">0</span>
-                                                            
+
                                                         </div>
-                                                        
+
                                                          <button type="button" class="btn btn-circle btn-success">REQUEST</button>
-                                                        
+
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <!-- END WIDGET THUMB -->
                                             </div>
@@ -206,12 +217,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="widget-thumb-wrap">
                                                         <i class="widget-thumb-icon bg-red icon-action-redo"></i>
                                                         <div class="widget-thumb-body">
-                                                           
+
                                                             <span class="widget-thumb-body-stat" data-counter="counterup" data-value="2">0</span>
                                                         </div>
                                                         <button type="button" class="btn btn-circle btn-danger">REQUEST</button>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <!-- END WIDGET THUMB -->
                                             </div>
@@ -222,7 +233,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="widget-thumb-wrap">
                                                         <i class="widget-thumb-icon bg-purple icon-screen-desktop"></i>
                                                         <div class="widget-thumb-body">
-                                                           
+
                                                             <span class="widget-thumb-body-stat" data-counter="counterup" data-value="2">0</span>
                                                         </div>
                                                          <button type="button" class="btn btn-circle purple">REQUEST</button>
@@ -290,10 +301,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </div>
                                                 <!-- END SAMPLE TABLE PORTLET-->
                                             </div>
-                                            
-                                            
+
+
                                         </div>
-                                   
+
                                     </div>
                                     <!-- END PAGE CONTENT INNER -->
                                 </div>

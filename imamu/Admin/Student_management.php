@@ -83,62 +83,63 @@ if ($count > 0) {
                                         </div>
                                         <div class="caption">
                                             <i class="fa fa-comments"></i>Student</div>
-                                        <div class="tools">
-                                            <a href="javascript:;" class="collapse"> </a>
-                                            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
-                                            <a href="javascript:;" class="reload"> </a>
-                                            <a href="javascript:;" class="remove"> </a>
-                                        </div>
                                     </div>
                                     <div class="portlet-body">
-                                        <div class="table-scrollable">
-                                            <table class="table table-striped table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th> # </th>
-                                                        <th>  Name </th>
-                                                        <th> Student ID </th>
-                                                        <th> Status </th>
-                                                        <th> Update </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+                                      <div class="table-scrollable">
                                                     <?php
                                                     if (@count($array) > 0) {
-
-                                                        foreach ($array as $key => $value) {
-                                                            if ($value->status == 1) {
-                                                                ?>
-                                                                <tr>
-                                                                    <td><?php echo $key + 1; ?></td>
-                                                                    <td><?php echo $value->first_name . " " . $value->middle_name . " " . $value->third_name . " " . $value->last_name ?></td>
-                                                                    <td><?php echo $value->student_id; ?></td>
-                                                                    <td>  <span class="label label-sm label-success"> Approved </span> </td>
-                                                                    <td> <a href="Ub_Student.php?id=<?php echo $value->id; ?>" class="btn btn-outline btn-circle btn-sm purple">
-                                                                            <i class="fa fa-edit"></i> Update </a></td>
-                                                                </tr>
-                                                                <?php
-                                                            } else {
-                                                                ?>
-                                                                <tr>
-                                                                    <td><?php echo $key + 1; ?></td>
-                                                                    <td><?php echo $value->first_name . " " . $value->middle_name . " " . $value->third_name . " " . $value->last_name ?></td>
-                                                                    <td><?php echo $value->student_id; ?></td>
-                                                                    <td> <span class="label label-sm label-danger"> Blocked </span> </td>
-                                                                    <td> <a href="Ub_Student.php?id=<?php echo $value->id; ?>" class="btn btn-outline btn-circle btn-sm purple">
-                                                                            <i class="fa fa-edit"></i> Update </a></td>
-                                                                </tr>
-                                                                <?php
-                                                            }
-                                                        }
-                                                    } else {
-
-                                                    }
                                                     ?>
 
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                        <table class="table table-striped table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th> # </th>
+                                                                    <th>  Name </th>
+                                                                    <th> Student ID </th>
+                                                                    <th> Status </th>
+                                                                    <th> Update </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                        <?php
+                                                        foreach ($array as $key => $value) {
+                                                                ?>
+                                                                <tr>
+                                                                    <td><?php echo $key + 1; ?></td>
+                                                                    <td><?php echo $value->first_name . " " . $value->middle_name . " " . $value->third_name . " " . $value->last_name ?></td>
+                                                                    <td><?php echo $value->student_id; ?></td>
+                                                                    <?php
+                                                                    if ($value->status == 1) {
+                                                                      ?>
+                                                                      <td>  <span class="label label-sm label-success"> Approved </span> </td>
+                                                                      <?php
+                                                                    }else{
+                                                                      ?>
+                                                                      <td> <span class="label label-sm label-danger"> Blocked </span> </td>
+                                                                      <?php
+                                                                    }
+                                                                     ?>
+
+                                                                    <td> <a href="Ub_Student.php?id=<?php echo $value->id; ?>" class="btn btn-outline btn-circle btn-sm purple">
+                                                                            <i class="fa fa-edit"></i> Update </a></td>
+                                                                </tr>
+                                                                <?php
+
+                                                        }
+                                                        ?>
+                                                        </tbody>
+                                                      </table>
+                                                        <?php
+                                                    }else{
+                                                        ?>
+                                                        <div class="alert alert-danger">
+                                                            <strong>Alert !</strong> No Student in database
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                  </div>
                                     </div>
                                 </div>
                                 <!-- END SAMPLE TABLE PORTLET-->

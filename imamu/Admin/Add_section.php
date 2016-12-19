@@ -31,7 +31,7 @@ if ($count > 0) {
 
                                     <div class="form-group">
                                         <label for="single" class="control-label">Section Number</label>
-                                        <input class="form-control placeholder-no-fix" type="text" placeholder=" Section Number" name="section_number" minlength= "6" required/>
+                                        <input class="form-control placeholder-no-fix" type="text" placeholder=" Section Number" name="section_number" minlength= "3" required/>
                                     </div>
                                     <div class="form-group">
                                         <label for="single" class="control-label">Room</label>
