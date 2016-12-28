@@ -6,6 +6,7 @@ $student = array();
 $course = array();
 $semester = array();
 $feadback= array();
+$request = array();
 $id = $_GET['id'];
 $id = (int) $id;
 if ($id != 0) {
@@ -16,6 +17,8 @@ if ($id != 0) {
         for ($i = 0; $i < $count; $i++) {
             $array[@count($array)] = mysqli_fetch_object($result);
         }
+
+        $request = $array;
 
         $query = "select f.* , u.first_name , u.middle_name , u.third_name , u.last_name from feedback f , user u where f.request_id = ".$id." AND u.id = f.sender ORDER by f.id DESC";
         $result = @mysqli_query($connection, $query);
@@ -125,14 +128,6 @@ if ($id != 0) {
                                                 <span class="caption-subject font-dark sbold uppercase"> Request # <?php echo $id; ?>
                                                 </span>
                                             </div>
-                                            <div class="actions">
-                                                <div class="actions">
-                                                  <a class="btn btn-transparent blue btn-outline btn-circle btn-sm active" href="accpetRequest.php?id=<?php echo $id; ?>"></i>Accept</a>
-
-                                                  <a class="btn btn-transparent blue btn-outline btn-circle btn-sm active" href="rejectRequest.php?id=<?php echo $id; ?>"></i>Reject</a>
-                                                </div>
-                                            </div>
-
                                         </div>
                                         <div class="portlet-body">
                                             <div class="tabbable-line">
@@ -249,15 +244,22 @@ if ($id != 0) {
 
                                                                                 ?>
                                                                               </div>
-                                                                              <h3 class="sbold blog-comments-title">Add Comment</h3>
-                                                                              <form action="controller/addComment.php?id=<?php echo $id; ?>" method="post">
-                                                                                  <div class="form-group">
-                                                                                      <textarea rows="8" name="comment" placeholder="Write comment here ..." class="form-control c-square"></textarea>
-                                                                                  </div>
-                                                                                  <div class="form-group">
-                                                                                      <button type="submit" name="addComment" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
-                                                                                  </div>
-                                                                              </form>
+                                                                              <?php
+                                                                                if($request[0]->status == 4){
+                                                                                  ?>
+                                                                                  <h3 class="sbold blog-comments-title">Add Comment</h3>
+                                                                                  <form action="addComment.php?id=<?php echo $id; ?>" method="post">
+                                                                                      <div class="form-group">
+                                                                                          <textarea rows="8" name="comment" placeholder="Write comment here ..." class="form-control c-square"></textarea>
+                                                                                      </div>
+                                                                                      <div class="form-group">
+                                                                                          <button type="submit" name="addComment" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
+                                                                                      </div>
+                                                                                  </form>
+
+                                                                                  <?php
+                                                                                }
+                                                                              ?>
                                                                           </div>
                                                                       </div>
                                                                   </div>

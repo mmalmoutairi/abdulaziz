@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'header.php';
 include '../db/db.php';
 $query = "SELECT * FROM `semester` order by `id` desc";

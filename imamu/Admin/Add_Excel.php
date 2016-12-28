@@ -27,16 +27,6 @@ include 'header.php'
             <!-- BEGIN PAGE CONTENT BODY -->
             <div class="page-content">
                 <div class="container">
-                    <!-- BEGIN PAGE BREADCRUMBS -->
-                    <ul class="page-breadcrumb breadcrumb">
-                        <li>
-                            <a href="#">ADD Student  </a>
-                            <i class="fa fa-circle"></i>
-                        </li>
-
-                    </ul>
-                    <!-- END PAGE BREADCRUMBS -->
-                    <!-- BEGIN PAGE CONTENT INNER -->
                     <div class="page-content-inner">
 
                         <div class="row">
@@ -52,7 +42,7 @@ include 'header.php'
                                     </div>
                                     <div class="portlet-body form">
                                         <!-- BEGIN FORM-->
-                                        <form action="#" class="form-horizontal form-bordered">
+                                        <form method="post" action="controller/addExcel.php" class="form-horizontal form-bordered" enctype="multipart/form-data" >
                                             <div class="form-body">
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3"> File</label>
@@ -60,10 +50,7 @@ include 'header.php'
                                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                                             <span class="btn green btn-file">
                                                                 <span class="fileinput-new"> Select Excel file </span>
-                                                                <span class="fileinput-exists"> Change </span>
-                                                                <input type="file" name="..."> </span>
-                                                            <span class="fileinput-filename"> </span> &nbsp;
-                                                            <a href="javascript:;" class="close fileinput-exists" data-dismiss="fileinput"> </a>
+                                                                <input type="file" name="userfile"> </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -71,9 +58,7 @@ include 'header.php'
                                             <div class="form-actions">
                                                 <div class="row">
                                                     <div class="col-md-offset-3 col-md-9">
-                                                        <a href="javascript:;" class="btn green">
-                                                            <i class="fa fa-check"></i> Submit</a>
-                                                        <a href="javascript:;" class="btn btn-outline grey-salsa">Cancel</a>
+                                                        <button class="class="btn green"" type="submit" name="addExcel"><i class="fa fa-check"></i> Submit</button>
                                                     </div>
                                                 </div>
                                             </div>

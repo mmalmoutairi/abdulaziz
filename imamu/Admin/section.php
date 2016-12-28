@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'header.php';
 include '../db/db.php';
 $query = "select s.* , c.name from section s , course c where s.course_id = c.id order by s.id desc";

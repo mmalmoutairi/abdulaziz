@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'header.php';
 include '../db/db.php';
 $query = "select `id`, `first_name`, `middle_name`, `third_name`, `last_name`, `email`, `status` from `user` where `role_id` = 4 order by `id` desc";
@@ -79,11 +78,6 @@ if ($count > 0) {
 
                                         </div>
 
-                                        <div class="actions">
-                                            <div class="actions"><a class="btn btn-transparent blue btn-outline btn-circle btn-sm active" href="Add_Excel.php"><i class="fa fa-plus"></i>Add Excel</a>
-                                            </div>
-
-                                        </div>
                                         <div class="caption">
                                             <i class="fa fa-comments"></i>DR</div>
                                     </div>

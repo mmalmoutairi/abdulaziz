@@ -2,14 +2,13 @@
 
 session_start();
 if(isset($_SESSION['user'])){
-  if($_SESSION['role'] != 1){
+  if($_SESSION['role'] != 4){
     header("Location: ../login.php" , false);
   }
 }else{
   header("Location: ../login.php" , false);
 }
  ?>
-
 <!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
@@ -33,7 +32,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Student management</title>
+        <title>Requset managment</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #3 for statistics, charts, recent events and reports" name="description" />
@@ -54,7 +53,6 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
         <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/pages/css/blog-rtl.min.css" rel="stylesheet" type="text/css">
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <link href="../assets/layouts/layout3/css/layout.min.css" rel="stylesheet" type="text/css" />
@@ -96,67 +94,39 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="hor-menu  ">
                                     <ul class="nav navbar-nav">
                                         <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
-                                            <a href="javascript:;"> Dashboard
+                                            <a href="Index.php"> Dashboard
                                                 <span class="arrow"></span>
                                             </a>
 
                                         </li>
 
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                            <a href="javascript:;"> User
-                                                <span class="arrow"></span>
-                                            </a>
-                                            <ul class="dropdown-menu pull-left">
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="Student_management.php" class="nav-link  "> Student Management </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="DR_management.php" class="nav-link  "> Dr management </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
-                                                    <a href="Employees_management.php" class="nav-link  "> Employees management </a>
-                                                </li>
 
-                                            </ul>
-                                        </li>
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                            <a href="Cours_Management.php">  courses
-                                                <span class="arrow"></span>
-                                            </a>
-
-                                        </li>
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                            <a href="semester.php"> semester
-                                                <span class="arrow"></span>
-                                            </a>
-
-                                        </li>
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
-                                            <a href="section.php"> section
-                                                <span class="arrow"></span>
-                                            </a>
-
-                                        </li>
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                      <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="javascript:;"> Requset
                                                 <span class="arrow"></span>
                                             </a>
                                             <ul class="dropdown-menu pull-left">
                                                 <li aria-haspopup="true" class=" ">
-                                                    <a href="Pending.php" class="nav-link  ">  Pending </a>
-                                                </li>
-                                                <li aria-haspopup="true" class=" ">
                                                     <a href="Accept.php" class="nav-link  ">  Accept </a>
                                                 </li>
                                                 <li aria-haspopup="true" class=" ">
-                                                    <a href="Rejected.php" class="nav-link  "> Rejected </a>
+                                                    <a href="Rejected.php" class="nav-link  ">  Reject </a>
                                                 </li>
                                                 <li aria-haspopup="true" class=" ">
-                                                    <a href="Feedback.php" class="nav-link  "> Feedback </a>
+                                                    <a href="Pending.php" class="nav-link  ">  Pending </a>
                                                 </li>
-
+                                                <li aria-haspopup="true" class=" ">
+                                                    <a href="Feedback.php" class="nav-link  ">  Feedback </a>
+                                                </li>
                                             </ul>
                                         </li>
+                                          <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
+                                            <a href="logout.php"> Logout
+                                                <span class="arrow"></span>
+                                            </a>
+
+                                        </li>
+
 
                                     </ul>
                                 </div>

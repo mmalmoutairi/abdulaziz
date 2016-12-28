@@ -10,6 +10,17 @@ if ($count > 0) {
         $array[@count($array)] = mysqli_fetch_object($result);
     }
 }
+
+$query = "select `id`, `first_name`, `middle_name`, `third_name`, `last_name` from `user` where `role_id` = 3 order by `id` desc";
+$result = @mysqli_query($connection, $query);
+$count = mysqli_num_rows($result);
+$dr = array();
+if ($count > 0) {
+    for ($i = 0; $i < $count; $i++) {
+        $dr[@count($dr)] = mysqli_fetch_object($result);
+    }
+}
+
 ?>
 <div class="page-wrapper-row full-height">
     <div class="page-wrapper-middle">
@@ -46,6 +57,19 @@ if ($count > 0) {
                                                 foreach ($array as $key => $value) {
                                                   ?>
                                                   <option value="<?php echo $value->id; ?>"><?php echo $value->name; ?></option>
+                                                  <?php
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="single" class="control-label">Doctor</label>
+                                        <select id="single" name="dr_id" class="form-control select2" >
+                                            <?php
+                                                foreach ($dr as $key => $value) {
+                                                  ?>
+                                                  <option value="<?php echo $value->id; ?>" ><?php echo $value->first_name . " " . $value->middle_name . " " . $value->third_name . " " . $value->last_name ?></option>
                                                   <?php
                                                 }
                                             ?>

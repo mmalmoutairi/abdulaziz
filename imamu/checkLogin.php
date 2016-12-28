@@ -19,13 +19,12 @@ if(!empty($username) AND !empty($password)){
       }else if($user[0]->role_id == 2){
         header("Location: Student/" , false);
       }else if($user[0]->role_id == 3){
-        header("Location: Employee/" , false);
-      }else if($user[0]->role_id == 4){
         header("Location: DR/" , false);
+      }else if($user[0]->role_id == 4){
+        header("Location: Employee/" , false);
       }
 
     }else{
-      die("FALSE");
       $errors[@count($errors)] = "username or password incorrect";
       $_SESSION["errors"] = $errors;
       header("Location: login.php" , false);

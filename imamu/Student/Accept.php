@@ -1,7 +1,8 @@
 <?php
 include 'header.php';
+
 include '../db/db.php';
-$query = " SELECT r.id, u.first_name, u.middle_name, u.third_name, u.last_name, s.name AS semester_name, se.section_number AS secion_name, se.course_id AS course_id, c.name as course_name FROM request r, USER u, semester s, section se, course c WHERE r.student_id = u.id AND r.semester_id = s.id AND r.section_id = se.id AND r.status = 2 AND se.course_id = c.id ORDER BY `id` DESC";
+$query = " SELECT r.id, u.first_name, u.middle_name, u.third_name, u.last_name, s.name AS semester_name, se.section_number AS secion_name, se.course_id AS course_id, c.name as course_name FROM request r, USER u, semester s, section se, course c WHERE r.student_id = u.id AND r.semester_id = s.id AND r.section_id = se.id AND r.status = 1 AND se.course_id = c.id AND r.student_id = ".$_SESSION['user']." ORDER BY `id` DESC";
 $result = @mysqli_query($connection, $query);
 $count = mysqli_num_rows($result);
 $array = array();
@@ -10,6 +11,8 @@ if ($count > 0) {
         $array[@count($array)] = mysqli_fetch_object($result);
     }
 }
+
+
 ?>
 <div class="page-wrapper-row full-height">
     <div class="page-wrapper-middle">
@@ -87,7 +90,7 @@ if ($count > 0) {
                                             }else{
                                                 ?>
                                                 <div class="alert alert-danger">
-                                                    <strong>Alert !</strong> No Request Rejeted
+                                                    <strong>Alert !</strong> No Request Accepted
                                                 </div>
                                                 <?php
                                             }

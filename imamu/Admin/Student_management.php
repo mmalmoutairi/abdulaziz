@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'header.php';
 include '../db/db.php';
 $query = "select `id`, `first_name`, `middle_name`, `third_name`, `last_name`, `student_id`, `status` from `user` where `role_id` = 2 order by `id` desc";

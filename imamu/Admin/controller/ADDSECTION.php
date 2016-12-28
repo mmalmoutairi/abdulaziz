@@ -7,6 +7,7 @@ if (isset($_POST['AddSection'])) {
     $section_number   = $_POST['section_number'];
     $room             = $_POST['room'];
     $course_id        = $_POST['course_id'];
+    $dr_id            = $_POST['dr_id'];
     $start            = $_POST['start'];
     $max              = $_POST['max'];
     $end              = $_POST['end'];
@@ -37,7 +38,7 @@ if (isset($_POST['AddSection'])) {
 
 
     if (@count($errors) == 0) {
-      $query = "INSERT INTO `section` (`id`, `section_number`, `room`,  `course_id`, `start_time`, `finish_time`, `max_studemt`, `sun`, `mon`, `tue`, `wed`, `thu`) VALUES (NULL, '$section_number', '$room', '$course_id',  '$start', '$end', '$max', '$sun', '$mon', '$tue', '$wed', '$thu')";
+      $query = "INSERT INTO `section` (`id`, `dr_id`, `section_number`, `room`,  `course_id`, `start_time`, `finish_time`, `max_studemt`, `sun`, `mon`, `tue`, `wed`, `thu`) VALUES (NULL, '$dr_id', '$section_number', '$room', '$course_id',  '$start', '$end', '$max', '$sun', '$mon', '$tue', '$wed', '$thu')";
       $result = @mysqli_query($connection, $query);
       if ($result) {
           $_SESSION["success"] = "Add Section successfuly";

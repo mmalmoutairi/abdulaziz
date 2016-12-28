@@ -10,6 +10,7 @@ if (isset($_POST['UpdateSection']) && $id != 0) {
     $section_number   = $_POST['section_number'];
     $room             = $_POST['room'];
     $course_id        = $_POST['course_id'];
+    $dr_id            = $_POST['dr_id'];
     $start            = $_POST['start'];
     $max              = $_POST['max'];
     $end              = $_POST['end'];
@@ -42,6 +43,9 @@ if (isset($_POST['UpdateSection']) && $id != 0) {
     if (@count($errors) == 0) {
         $query = "update `section` set ";
         $build =array();
+        if (!empty($dr_id)) {
+            $build[@count($build)] = "`dr_id` = '" . $dr_id . "'";
+        }
         if (!empty($section_number)) {
             $build[@count($build)] = "`section_number` = '" . $section_number . "'";
         }
