@@ -1,7 +1,6 @@
 <?php
 include 'header.php';
 
-
 include '../db/db.php';
 $query = "SELECT * FROM `semester` WHERE isActive = 1 ORDER BY id DESC limit 1";
 $result = @mysqli_query($connection, $query);
@@ -168,7 +167,8 @@ if ($count > 0) {
                                                                                            foreach ($array as $key => $data) {
                                                                                              ?>
                                                                                              <label>
-                                                                                                 <input type="radio" value="<?php echo $data->id ?>" name="<?php echo "Course".$value->id; ?>" class="icheck"> <?php echo "Section : ".$data->section_number; ?></label>
+                                                                                                 <input type="radio" value="<?php echo $data->id ?>" name="<?php echo "Course".$value->id; ?>" class="icheck"> <?php echo "Section : ".$data->section_number; ?>
+                                                                                            </label>
                                                                                              <?php
                                                                                            }
                                                                                             ?>
@@ -206,7 +206,8 @@ if ($count > 0) {
                                                                                          foreach ($array as $key => $g) {
                                                                                            ?>
                                                                                            <label>
-                                                                                               <input type="radio" value="<?php echo $g->id ?>" name="choses1" class="icheck"> <?php echo "Course : ".$g->name." , Section : ".$g->section_number; ?></label>
+                                                                                               <input type="radio" value="<?php echo $g->id ?>" name="choses1" class="icheck"> <?php echo "Course : ".$g->name." , Section : ".$g->section_number; ?>
+                                                                                           </label>
                                                                                            <?php
                                                                                          }
                                                                                           ?>
@@ -352,4 +353,6 @@ if ($count > 0) {
                         <!-- END PAGE CONTENT INNER -->
                     </div>
                 </div>
-<?php include 'footer.php' ?>
+<?php
+  include 'footer.php';
+?>
