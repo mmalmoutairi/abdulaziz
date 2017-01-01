@@ -76,6 +76,17 @@ $query = "select r.* , s.section_number , s.room , s.start_time , s.finish_time 
 
                                 <div class="row">
                                   <?php
+                                  if (isset($_SESSION['success'])) {
+                                      ?>
+                                      <div class="alert alert-success">
+                                          <strong>Success : </strong> <?php echo $_SESSION['success']; ?>
+                                      </div>
+                                      <?php
+                                      unset($_SESSION["success"]);
+                                  }
+
+                                  ?>
+                                  <?php
                                     if(@count($courses) > 0){
                                       ?>
                                       <div class="col-md-12">

@@ -12,6 +12,7 @@ if(!empty($_POST)){
       $query = "INSERT INTO `request` (`id`, `student_id`, `semester_id`, `section_id`, `status`) VALUES (NULL, '".$_SESSION['user']."', '".$semester->id."', '".$_POST[$field]."', '3')" ;
       $result = @mysqli_query($connection, $query);
   }
+  $_SESSION["success"] = "submit request successfuly";
   header("Location: index.php" , false);
 }else{
 

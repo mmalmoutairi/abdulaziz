@@ -95,7 +95,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                 <div class="hor-menu  ">
                                     <ul class="nav navbar-nav">
-                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
+                                        <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown">
                                             <a href="Index.php"> Dashboard
                                                 <span class="arrow"></span>
                                             </a>
@@ -127,14 +127,14 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                             </ul>
                                         </li>
-                                          <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
+                                          <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="Grade.php"> Grade
                                                 <span class="arrow"></span>
                                             </a>
 
                                         </li>
                                         </li>
-                                          <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown active">
+                                          <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
                                             <a href="logout.php"> Logout
                                                 <span class="arrow"></span>
                                             </a>
