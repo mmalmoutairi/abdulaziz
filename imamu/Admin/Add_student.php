@@ -49,7 +49,7 @@ include 'header.php';
                                 }
                                 ?>
                                 <!-- BEGIN SAMPLE TABLE PORTLET-->
-                                <form class="register-form" action="controller/addStudent.php" method="post">
+                                <form name="myForm" onsubmit="return validateForm();"  class="register-form" action="controller/addStudent.php" method="post">
 
                                     <div class="form-group">
                                         <label class="control-label visible-ie8 visible-ie9">First Name </label>
@@ -66,10 +66,12 @@ include 'header.php';
                                         <input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="last_name" required /> </div>
                                     <div class="form-group">
                                         <label class="control-label visible-ie8 visible-ie9">National ID</label>
-                                        <input class="form-control placeholder-no-fix" type="text" placeholder="National ID" name="national_id" minlength="10" maxlength="10" required /> </div>
+                                        <span id="errNIN" class="help-block help-block-error"></span>
+                                        <input class="form-control placeholder-no-fix" type="text" placeholder="National ID" minlength="10" maxlength="10" name="national_id" minlength="10" maxlength="10" required /> </div>
                                     <div class="form-group">
                                         <label class="control-label visible-ie8 visible-ie9">Student ID</label>
-                                        <input class="form-control placeholder-no-fix" type="text" placeholder="Student ID" name="student_id" required /> </div>
+                                        <span id="errSID" class="help-block help-block-error"></span>
+                                        <input class="form-control placeholder-no-fix" type="text" placeholder="Student ID" minlength="9" maxlength="10" name="student_id" required /> </div>
 
                                     <div class="form-group">
                                         <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
@@ -78,7 +80,7 @@ include 'header.php';
                                     <div class="form-group">
                                         <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                                         <label class="control-label visible-ie8 visible-ie9">Password</label>
-                                        <input class="form-control placeholder-no-fix" type="password" placeholder="Password" name="password" required /> </div>
+                                        <input class="form-control placeholder-no-fix" type="password" placeholder="Password" minlength="3" maxlength="25" name="password" required /> </div>
 
 
                                     <div class="form-actions">
@@ -101,6 +103,29 @@ include 'header.php';
     </div>
     <!-- END CONTAINER -->
 </div>
+<script type="text/javascript">
+
+    function validateForm(){
+      document.getElementById("errNIN").innerHTML = "";
+      document.getElementById("errSID").innerHTML = "";
+
+      var national_id   = document.forms["myForm"]["national_id"].value.trim();
+      var student_id    = document.forms["myForm"]["student_id"].value.trim();
+      if(isNaN(national_id)){
+        document.getElementById("errNIN").innerHTML = "Please Enter Only Number!";
+        document.forms["myForm"]["national_id"].focus();
+        return false;
+      }
+
+      if(isNaN(student_id)){
+        document.getElementById("errSID").innerHTML = "Please Enter Only Number";
+        document.forms["myForm"]["student_id"].focus();
+        return false;
+      }
+      return true;
+    }
+
+</script>
 <?php
 include 'footer.php'
 ?>

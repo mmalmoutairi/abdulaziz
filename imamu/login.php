@@ -53,7 +53,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN LOGO -->
         <div class="logo">
             <a href="#">
-                <img src="assets/pages/img/logo-big.png" alt="" /> </a>
+78                <img src="assets/pages/img/logo-big.png" alt="" /> </a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
